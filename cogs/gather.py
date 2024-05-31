@@ -4,6 +4,7 @@ from discord import app_commands
 from discord.ext import commands
 from os.path import join, dirname
 from dotenv import load_dotenv
+from nemo import nemo_player
 
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)

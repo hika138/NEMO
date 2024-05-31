@@ -23,6 +23,23 @@ class NEMO(commands.Bot):
             "cogs,invite"
         ]
 
+class nemo_player(discord.Member):
+    def __init__(self):
+        super().__init__()
+        self.money = 0
+        self.items = [] #アイテムidと個数の２次元リスト
+
+    def add_money(self, amount):
+        self.money += amount
+
+    def add_item(self, item_id, amount):
+        if item_id in self.items:
+            self.items[item_id][1] += amount
+            if self.items[item_id][1] <= 0:
+                self.items.remove(self.items[item_id])
+        else:
+            self.items.append([item_id, amount])
+
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
