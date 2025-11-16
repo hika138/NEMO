@@ -1,10 +1,13 @@
-import discord
 import os
-from discord.ext import commands
 from os.path import join, dirname
+import discord
+from discord.ext import commands
 from dotenv import load_dotenv
 
 class NEMO(commands.Bot):
+    """
+    NEMO Bot Class
+    """
     def __init__(self):
         super().__init__(
             intents=intents,
