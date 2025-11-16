@@ -1,3 +1,7 @@
+"""
+NEMO Bot main module
+"""
+
 import os
 from os.path import join, dirname
 import discord
