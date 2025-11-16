@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  api:
+    build:
+      context: ./api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api:/app
+    tty: true
+  
+  bot:
+    build:
+      context: ./bot
+    volumes:
+      - ./bot:/app
+    env_file:
+      - ./bot/.env
+    tty: true
